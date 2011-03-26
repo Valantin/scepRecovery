@@ -1,0 +1,41 @@
+	.set noreorder
+
+#include "pspstub.s"
+
+	STUB_START "SystemCtrlForKernel",0x00090000,0x00230005
+	STUB_FUNC  0x1C90BECB,sctrlHENSetStartModuleHandler
+	STUB_FUNC  0x159AF5CC,sctrlHENFindFunction
+	STUB_FUNC  0x826668E9,PatchSyscall
+	STUB_FUNC  0xAC0E84D1,SystemCtrlForKernel_AC0E84D1
+	STUB_FUNC  0x1F3037FB,SystemCtrlForKernel_1F3037FB
+	STUB_FUNC  0xCE0A654E,sctrlHENLoadModuleOnReboot
+	STUB_FUNC  0xB86E36D1,SystemCtrlForKernel_B86E36D1
+	STUB_FUNC  0x2F157BAF,SetConfig
+	STUB_FUNC  0xCC9ADCF8,sctrlHENSetSpeed
+	STUB_FUNC  0x745286D1,sctrlHENSetMemory
+	STUB_FUNC  0x98012538,SetSpeed
+	STUB_FUNC  0xF9584CAD,oe_malloc
+	STUB_FUNC  0xA65E8BC4,oe_free
+	STUB_FUNC  0x8E426F09,sctrlSEGetConfigEx
+	STUB_FUNC  0x16C3B7EE,sctrlSEGetConfig
+	STUB_FUNC  0xAD4D5EA5,sctrlSESetConfigEx
+	STUB_FUNC  0x1DDDAD0C,sctrlSESetConfig
+	STUB_FUNC  0xD339E2E9,sctrlHENIsSE
+	STUB_FUNC  0x2E2935EF,sctrlHENIsDevhook
+	STUB_FUNC  0x1090A2E1,sctrlHENGetVersion
+	STUB_FUNC  0xB47C9D77,sctrlSEGetVersion
+	STUB_FUNC  0xD8FF9B99,sctrlKernelSetDevkitVersion
+	STUB_FUNC  0xEB74FE45,sctrlKernelSetUserLevel
+	STUB_FUNC  0x2D10FB28,sctrlKernelLoadExecVSHWithApitype
+	STUB_FUNC  0x78E46415,sctrlHENFindDriver
+	STUB_FUNC  0x577AF198,sctrlKernelLoadExecVSHDisc
+	STUB_FUNC  0x94FE5E4B,sctrlKernelLoadExecVSHDiscUpdater
+	STUB_FUNC  0x75643FCA,sctrlKernelLoadExecVSHMs1
+	STUB_FUNC  0xABA7F1B0,sctrlKernelLoadExecVSHMs2
+	STUB_FUNC  0x7B369596,sctrlKernelLoadExecVSHMs3
+	STUB_FUNC  0xD690750F,sctrlKernelLoadExecVSHMs4
+	STUB_FUNC  0x2794CCF4,sctrlKernelExitVSH
+	STUB_FUNC  0xCB76B778,sctrlKernelSetInitKeyConfig
+	STUB_FUNC  0x128112C3,sctrlKernelSetInitFileName
+	STUB_FUNC  0x8D5BE1F0,sctrlKernelSetInitApitype
+	STUB_END

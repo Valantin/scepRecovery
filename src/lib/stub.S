@@ -1,0 +1,15 @@
+.set noreorder
+
+#include "pspstub.s"
+STUB_START "scePaf", 0x00090000, 0x00020005 
+STUB_FUNC 0x23C8DAB5, scePaf_memcpy
+STUB_FUNC 0xE8473E80, scePaf_sprintf
+STUB_END
+
+STUB_START "SystemCtrlForKernel", 0x00090000, 0x00230005
+STUB_FUNC 0x2794CCF4, sctrlKernelExitVSH
+STUB_FUNC 0x1DDDAD0C, sctrlSESetConfig
+STUB_FUNC 0x16C3B7EE, sctrlSEGetConfig
+STUB_FUNC 0x1090A2E1, sctrlHENGetVersion
+STUB_FUNC  0xB47C9D77,sctrlSEGetVersion
+STUB_END
