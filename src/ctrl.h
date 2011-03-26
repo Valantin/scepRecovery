@@ -22,6 +22,12 @@
 #include <pspsdk.h>
 #include <pspctrl.h>
 
+#define ALL_KEYS 0x0083F3F9
+#define NON_HOLD_KEYS  (ALL_KEYS & (~PSP_CTRL_HOLD))
+
+static int g_cur_buttons = 0;
+static int g_buttons_on = 0;
+
 /**
  * wait a key mask
  *

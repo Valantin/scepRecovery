@@ -21,17 +21,14 @@
 
 #include <string.h>
 
-extern int getMaxlen(const char ** item, int item_num)
-{
-	int i, maxlen = 0;
-	for(i = 0; i < item_num; i ++)
-	{
-		if(strlen(item[i]) > maxlen)
-		{
-			maxlen = strlen(item[i]);
-		}
-	}
-	return maxlen;
+extern int getMaxlen(const char ** item, int item_num) {
+    int i, maxlen = 0;
+    for(i = 0; i < item_num; i ++) {
+        if(strlen(item[i]) > maxlen) {
+            maxlen = strlen(item[i]);
+        }
+    }
+    return maxlen;
 }
 
 void trim(char *buf) {
@@ -79,15 +76,14 @@ extern int ParsePluginsConfig(char *buf, int len, char *path, int *active) {
 extern void SetPluginsConfig(char *str, int activated) {
     char *s = str;
     if(activated == 0)
-        strcat(s," 0\t\n\r");
+        strcat(s," 0\n");
     else
-        strcat(s," 1\t\n\r");
+        strcat(s," 1\n");
 }
 
-extern int loadstartModule(char * path)
-{
-	SceUID mod = sceKernelLoadModule(path, 0, NULL);
-	if(mod >= 0)
-		mod = sceKernelStartModule(mod, strlen(path)+1, path, NULL, NULL);
-	return mod;
+extern int loadstartModule(char * path) {
+    SceUID mod = sceKernelLoadModule(path, 0, NULL);
+    if(mod >= 0)
+        mod = sceKernelStartModule(mod, strlen(path)+1, path, NULL, NULL);
+    return mod;
 }
